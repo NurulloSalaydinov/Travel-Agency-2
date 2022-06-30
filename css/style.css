@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
     --red: #FF492F;
@@ -7,11 +7,18 @@
 }
 
 * {
-    font-family: 'DM Serif Display', serif;
+    transition: all 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
 ::-webkit-scrollbar {
     width: 0.6rem;
+    height: 7px;
     background: transparent;
     border: 1px solid var(--red)
 }
@@ -52,6 +59,7 @@ header {
     height: auto;
     min-height: 100vh;
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     background-image: url(../img/home-bg.png);
 }
@@ -71,12 +79,10 @@ nav a {
     font-size: 65px;
 }
 
-.font-lato {
-    font-family: 'Lato', sans-serif !important;
-}
-
-.font-dm-serif {
-    font-family: 'DM Serif Display', serif !important;
+@media (max-width: 767px) {
+    .banner-content h1 {
+        font-size: 45px;
+    }
 }
 
 .card {
@@ -86,6 +92,7 @@ nav a {
 .img-with-cost {
     width: 100%;
     height: auto;
+    overflow: hidden;
     position: relative;
 }
 
@@ -95,7 +102,64 @@ nav a {
     font-size: 20px;
     color: var(--red);
     background: #fff;
-    padding: 20px 20px;
+    padding: 16px 12px;
     position: absolute;
     content: attr(data-cost);
+}
+
+.img-with-cost img {
+    width: 100%;
+}
+
+.img-with-cost:hover img {
+    transform: scale(1.150);
+}
+
+.card {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.line-trough {
+    position: relative;
+    padding-left: 150px;
+}
+
+.line-trough::before {
+    content: "";
+    top: 50%;
+    left: 0;
+    height: 4px;
+    width: 110px;
+    font-size: 5px;
+    position: absolute;
+    display: inline-block;
+    background: var(--red);
+}
+
+.quote {
+    position: relative;
+}
+
+.quote::before {
+    top: -30px;
+    left: -30px;
+    content: "❝";
+    font-size: 50px;
+    color: var(--red);
+    position: absolute;
+}
+
+#client {
+    max-height: 75vh;
+}
+
+.box {
+    border-radius: 0;
+    margin-bottom: 10px;
+    box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.scroll-auto {
+    overflow: auto;
 }
